@@ -12,7 +12,9 @@ export default defineConfig({
 
   reporter: [
     ['html'],
-    ['list']
+    ['list'],
+    ['allure-playwright'],
+     ['junit', { outputFile: 'test-results/results.xml' }]
   ],
 
   use: {
@@ -38,13 +40,16 @@ export default defineConfig({
         ...devices['Desktop Firefox']
       }
     },
-
-    {
-      name: 'webkit',
-      use: {
-        ...devices['Desktop Safari']
-      }
-    }
+  {
+    name: 'webkit',
+    use: { ...devices['Desktop Safari'] },
+  },
+  
+  
+  
+  
+  
+  
 
   ]
 

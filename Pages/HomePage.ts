@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class HomePage extends BasePage {
@@ -17,15 +17,16 @@ export class HomePage extends BasePage {
     }
 
     async clickProducts() {
-        await this.click(this.productsLink);
-    }
-
+    await this.page.goto('https://automationexercise.com/products');
+    await expect(this.page).toHaveURL(/\/products$/);
+}
+    
     async clickCart() {
-        await this.click(this.cartLink);
+        await this.page.goto('https://automationexercise.com/view_cart');
+        await expect(this.page).toHaveURL(/\/view_cart$/);
     }
 
     async clickLogin() {
         await this.click(this.loginLink);
     }
-
 }

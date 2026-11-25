@@ -10,21 +10,13 @@ export class LoginPage extends BasePage {
     }
 
 
-    email =
-        this.page.locator("[data-qa='login-email']");
+    email = this.page.locator("[data-qa='login-email']");
 
+    password = this.page.locator("[data-qa='login-password']");
 
-    password =
-        this.page.locator("[data-qa='login-password']");
+    loginButton = this.page.locator("[data-qa='login-button']");
 
-
-    loginButton =
-        this.page.locator("[data-qa='login-button']");
-
-
-    loggedIn =
-        this.page.locator("a:has-text('Logged in as')");
-
+    loggedIn = this.page.locator("a:has-text('Logged in as')");
 
 
     async loginUser(username:string,password:string){
